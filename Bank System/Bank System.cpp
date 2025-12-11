@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Employee.h"
 #include "Client.h"
+#include "Admin.h"
 using namespace std;
 
 int main()
@@ -14,7 +15,16 @@ int main()
     catch (const invalid_argument& e) {
         cout << e.what();
     }
-    
+     try {
+       
+        Admin * admin1 = new Admin("ali kassab", 999, "adminpass00", 7000);
+        admin1->displayInfo();
+        
+    }
+     catch (const invalid_argument& e) {
+        cout << e.what() << endl;
+       
+    }
     try {
         Client* K = new Client("Abdulrahman", 548, "hguifokdlxs", 8500);
         Client* ezz = new Client("ezz mohamed", 512, "q3wedrdyt", 1500);
