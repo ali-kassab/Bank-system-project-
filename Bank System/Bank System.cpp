@@ -15,15 +15,12 @@ int main()
     catch (const invalid_argument& e) {
         cout << e.what();
     }
-     try {
-       
-        Admin * admin1 = new Admin("ali kassab", 999, "adminpass00", 7000);
+    try {
+        Admin* admin1 = new Admin("ali kassab", 999, "adminpass00", 7000);
         admin1->displayInfo();
-        
     }
-     catch (const invalid_argument& e) {
+    catch (const invalid_argument& e) {
         cout << e.what() << endl;
-       
     }
     try {
         Client* K = new Client("Abdulrahman", 548, "hguifokdlxs", 8500);

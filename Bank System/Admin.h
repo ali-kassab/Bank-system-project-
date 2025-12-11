@@ -1,40 +1,23 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Person.h"
+#include "Employee.h"
 #include "Validator.h"
 using namespace std;
 
-class Admin : public Person
+class Admin : public Employee
 {
-private:
-    double salary;
-
 public:
-    Admin() : Person() {
-        salary = 0.0;
-    }
+    Admin() : Employee() {}
 
     Admin(string name, int id, string password, double salary)
-        : Person(name, id, password)
-    {
-        Validator::checkSalary(salary);
-        this->salary = salary;
-    }
-
-    void setSalary(double salary) {
-        Validator::checkSalary(salary);
-        this->salary = salary;
-    }
-
-    double getSalary() {
-        return salary;
+        : Employee(name, id, password, salary) {
     }
 
     void displayInfo() override {
-        cout << "Admin name      : " << name << endl;
-        cout << "Admin ID        : " << id << endl;
-        cout << "Admin password  : " << password << endl;
-        cout << "Admin salary    : " << salary << endl;
+        cout << "Admin name: " << getName() << endl;
+        cout << "Admin ID: " << getId() << endl;
+        cout << "Admin password: " << getPassword() << endl;
+        cout << "Admin salary: " << getSalary() << endl;
     }
 };
